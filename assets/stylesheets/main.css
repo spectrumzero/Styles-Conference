@@ -133,3 +133,71 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/*=============================
+ Grid rule set
+ ==============================
+ */
+
+/* change the default box mode to border-box mode to set rules for the browser to calculate the width and height of the html box. */
+/* comma-seperated selectors. apply to all the elements and pseudo-elements(::after and ::before here) */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* for compatibility */
+  box-sizing: border-box;
+}
+
+/* create a selector with a class of `container` to tell the browser definitely how wide any element with the class of `container` should be.  */
+.container {
+  /* set top and bottom margins to 0, and left and right margins to auto to let the browser automatically figure out equal left and right margins for the element, thus centering it on the page. */
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 960px;
+}
+
+
+/*==============================
+  Typography rule set
+  ==============================
+ */
+h1,
+h3,
+h5,
+h4,
+p {
+  margin-bottom: 22px;
+}
+
+/*==============================
+ button rule set
+ ===============================
+ */
+
+.btn {
+  border-radius: 5px;
+  /* bottons should be displayed as inline-block elements so we can add padding around all four sides without issue. 
+   * And inline-block elements flow with text and other inline elements--they dont start on a new line. 
+   * As for inline elements, they only respect horizontal padding and margins. */
+  display: inline-block;
+  margin: 0;
+}
+
+/* include styles specific to a button by using layered mutiple classes */
+.btn-alt {
+  /* the value of property `border` consists of 3 kinds of values: width, style, color.  */
+  border: 1px solid #dfe2e5;
+  /* 10px on the top and bottom; 30px on the left and rigth. */
+  padding: 10px 30px;
+}
+
+/*==============================
+ Home rule set
+ ===============================
+*/
+.hero {
+  padding: 22px 80px 66px 80px;
+}
