@@ -3,6 +3,11 @@
    License: none (public domain)
 */
 
+/*==============================
+ CSS Reset
+ ===============================
+ */
+
 html,
 body,
 div,
@@ -92,7 +97,12 @@ video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
+
+/*==============================
+ HTML5 display-role reset for older browsers
+ ===============================
+ */
+
 article,
 aside,
 details,
@@ -134,13 +144,89 @@ table {
   border-spacing: 0;
 }
 
-/*=============================
+/*==============================
+ Custom styles
+ ===============================
+ */
+
+body {
+  color: #888;
+  /* the embedded web font or fonts represented by mutiple words should be wrapped around double quotation marks.*/
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-sefif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #648880;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+strong {
+  font-weight: 400;
+}
+
+cite,
+em {
+  font-style: italic;
+}
+
+/*==============================
+ links
+ ===============================
+ */
+
+a {
+  color: #648880;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+
+
+.teaser a:hover h3 {
+  color: #a9b2b9;
+}
+
+/* more control over the underline's appearance */
+p a {
+  border-bottom: 1px solid #dfe2e5;
+}
+
+/*==============================
  Grid rule set
- ==============================
+ ===============================
  */
 
 /* change the default box mode to border-box mode to set rules for the browser to calculate the width and height of the html box. */
-/* comma-seperated selectors. apply to all the elements and pseudo-elements(::after and ::before here) */
+/* comma-seperated selectors: apply to all the elements and pseudo-elements(::after and ::before here) */
 *,
 *::before,
 *::after {
@@ -150,7 +236,7 @@ table {
   box-sizing: border-box;
 }
 
-/* create a selector with a class of `container` to tell the browser definitely how wide any element with the class of `container` should be.  */
+/* create a selector with a class of `container` to tell the browser definitely how wide any element with the class of `container` should be. */
 .container {
   /* set top and bottom margins to 0, and left and right margins to auto to let the browser automatically figure out equal left and right margins for the element, thus centering it on the page. */
   margin: 0 auto;
@@ -196,6 +282,7 @@ table {
  Clearfix
  ===============================
  */
+
 .group::before,
 .group::after {
   content: "";
@@ -215,17 +302,44 @@ table {
  Primary header
  ===============================
  */
+
 .logo {
   border-top: 4px solid #648880;
-  padding: 40px 0 22px 0;
   float: left;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
+  text-transform: uppercase;
 }
 
+.tagline {
+  margin: 66px 0 22px 0;
+  text-align: right;
+}
+
+.primary-nav {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+/*==============================
+ Navigation
+ ===============================
+ */
+
+.nav {
+  text-align: right;
+}
 
 /*==============================
   Typography rule set
   ==============================
  */
+
 h1,
 h3,
 h5,
@@ -241,9 +355,8 @@ p {
 
 .btn {
   border-radius: 5px;
-  /* bottons should be displayed as inline-block elements so we can add padding around all four sides without issue. 
-   * And inline-block elements flow with text and other inline elements--they dont start on a new line. 
-   * As for inline elements, they only respect horizontal padding and margins. */
+  /* inline-block elements flow with text and other inline elements--they dont start on a new line. But they can receive both the left-right and top-down information.
+   * However, inline elements only respect horizontal padding and margins. bottons should be displayed as inline-block elements in that we can add padding around all four sides without issue. */
   display: inline-block;
   margin: 0;
 }
@@ -260,19 +373,35 @@ p {
  Home rule set
  ===============================
 */
+
 .hero {
+  line-height: 44px;
   padding: 22px 80px 66px 80px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+
+.hero p {
+  font-size: 24px;
+  font-weight: 100;
 }
 
 /*==============================
  Primary footer
  ===============================
  */
-.primary-footer small {
-  float: left;
-}
 
 .primary-footer {
+  color: #648880;
+  font-size: 14px;
   padding-bottom: 44px;
   padding-top: 44px;
+}
+
+.primary-footer small {
+  float: left;
+  font-weight: 400;
 }
