@@ -150,6 +150,7 @@ table {
  */
 
 body {
+  background: #293f50;
   color: #888;
   /* the embedded web font or fonts represented by mutiple words should be wrapped around double quotation marks.*/
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-sefif;
@@ -194,6 +195,24 @@ strong {
 cite,
 em {
   font-style: italic;
+}
+
+.primary-header a,
+.primary-footer a {
+  color: #fff;
+}
+
+.primary-header a:hover,
+.primary-footer a:hover {
+  color: #648880;
+}
+
+.hero {
+  color: #fff;
+  line-height: 44px;
+  padding: 22px 80px 66px 80px;
+  text-align: center;
+
 }
 
 /*==============================
@@ -299,6 +318,32 @@ p a {
 }
 
 /*==============================
+ Rows
+ ===============================
+ */
+.row,
+.row-alt {
+  min-width: 960px;
+}
+
+.row {
+  background: #fff;
+  padding: 66px 0 44px 0;
+}
+
+.row-alt {
+  background: #cbe2c1;
+  background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+  padding: 44px 0 22px 0;
+}
+
+
+
+
+
+/*==============================
  Primary header
  ===============================
  */
@@ -349,6 +394,19 @@ p {
 }
 
 /*==============================
+ Leads
+ ===============================
+ */
+.lead {
+  text-align: center;
+}
+
+.lead p {
+  font-size: 21px;
+  line-height: 33px;
+}
+
+/*==============================
  button rule set
  ===============================
  */
@@ -357,16 +415,28 @@ p {
   border-radius: 5px;
   /* inline-block elements flow with text and other inline elements--they dont start on a new line. But they can receive both the left-right and top-down information.
    * However, inline elements only respect horizontal padding and margins. bottons should be displayed as inline-block elements in that we can add padding around all four sides without issue. */
+  color: #fff;
+  cursor: pointer;
   display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
   margin: 0;
+  text-transform: uppercase;
 }
 
 /* include styles specific to a button by using layered mutiple classes */
 .btn-alt {
   /* the value of property `border` consists of 3 kinds of values: width, style, color.  */
-  border: 1px solid #dfe2e5;
+  border: 1px solid #fff;
   /* 10px on the top and bottom; 30px on the left and rigth. */
   padding: 10px 30px;
+}
+
+.btn-alt:hover {
+  /* background */
+  background: #fff;
+  /* foreground */
+  color: #648880;
 }
 
 /*==============================
