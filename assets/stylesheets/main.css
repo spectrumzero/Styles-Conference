@@ -156,12 +156,121 @@ body {
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-sefif;
 }
 
+
+/*==============================
+ Grid
+ ===============================
+ */
+
+/* change the default box mode to border-box mode to set rules for the browser to calculate the width and height of the html box. */
+/* comma-seperated selectors: apply to all the elements and pseudo-elements(::after and ::before here) */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* for compatibility */
+  box-sizing: border-box;
+}
+
+/* share some of the styles from the container rule set with the grid rule set. */
+.container,
+.grid {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.grid,
+.col-1-3,
+.col-2-3 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-1-3,
+.col-2-3 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+
+/*==============================
+Clearfix
+===============================
+ */
+
+.group::before,
+.group::after {
+  content: "";
+  display: table;
+}
+
+.group::after {
+  clear: both;
+}
+
+.group {
+  clear: both;
+  zoom: 1;
+}
+
+
+/*==============================
+ Rows
+ ===============================
+ */
+
+.row,
+.row-alt {
+  min-width: 960px;
+}
+
+.row {
+  background: #fff;
+  padding: 66px 0 44px 0;
+}
+
+.row-alt {
+  background: #cbe2c1;
+  background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+  padding: 44px 0 22px 0;
+}
+
+/*==============================
+  Typography
+  ==============================
+ */
+
 h1,
 h2,
 h3,
 h4 {
   color: #648880;
 }
+
+h1,
+h3,
+h5,
+h4,
+p {
+  margin-bottom: 22px;
+}
+
 
 h1 {
   font-size: 36px;
@@ -197,26 +306,24 @@ em {
   font-style: italic;
 }
 
-.primary-header a,
-.primary-footer a {
-  color: #fff;
-}
-
-.primary-header a:hover,
-.primary-footer a:hover {
-  color: #648880;
-}
-
-.hero {
-  color: #fff;
-  line-height: 44px;
-  padding: 22px 80px 66px 80px;
-  text-align: center;
-
-}
 
 /*==============================
- links
+ Leads
+ ===============================
+ */
+
+.lead {
+  text-align: center;
+}
+
+.lead p {
+  font-size: 21px;
+  line-height: 33px;
+}
+
+
+/*==============================
+ Links
  ===============================
  */
 
@@ -229,185 +336,24 @@ a:hover {
   color: #a9b2b9;
 }
 
-
-.teaser a:hover h3 {
-  color: #a9b2b9;
-}
-
 /* more control over the underline's appearance */
 p a {
   border-bottom: 1px solid #dfe2e5;
 }
 
-/*==============================
- Grid rule set
- ===============================
- */
-
-/* change the default box mode to border-box mode to set rules for the browser to calculate the width and height of the html box. */
-/* comma-seperated selectors: apply to all the elements and pseudo-elements(::after and ::before here) */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  /* for compatibility */
-  box-sizing: border-box;
+.primary-header a,
+.primary-footer a {
+  color: #fff;
 }
 
-/* create a selector with a class of `container` to tell the browser definitely how wide any element with the class of `container` should be. */
-.container {
-  /* set top and bottom margins to 0, and left and right margins to auto to let the browser automatically figure out equal left and right margins for the element, thus centering it on the page. */
-  margin: 0 auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  width: 960px;
+.primary-header a:hover,
+.primary-footer a:hover {
+  color: #648880;
 }
-
-.col-1-3 {
-  width: 33.33%;
-}
-
-.col-2-3 {
-  width: 66.66%;
-}
-
-.col-1-3,
-.col-2-3 {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.grid,
-.col-1-3,
-.col-2-3 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* share some of the styles from the container rule set with the grid rule set. */
-.container,
-.grid {
-  margin: 0 auto;
-  width: 960px;
-}
-
-.container {
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-/*==============================
- Clearfix
- ===============================
- */
-
-.group::before,
-.group::after {
-  content: "";
-  display: table;
-}
-
-.group::after {
-  clear: both;
-}
-
-.group {
-  clear: both;
-  zoom: 1;
-}
-
-/*==============================
- Rows
- ===============================
- */
-.row,
-.row-alt {
-  min-width: 960px;
-}
-
-.row {
-  background: #fff;
-  padding: 66px 0 44px 0;
-}
-
-.row-alt {
-  background: #cbe2c1;
-  background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
-  background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
-  background: linear-gradient(to right, #a1d3b0, #f6f1d3);
-  padding: 44px 0 22px 0;
-}
-
-
-
 
 
 /*==============================
- Primary header
- ===============================
- */
-
-.logo {
-  border-top: 4px solid #648880;
-  float: left;
-  font-size: 48px;
-  font-weight: 100;
-  letter-spacing: .5px;
-  line-height: 44px;
-  padding: 40px 0 22px 0;
-  text-transform: uppercase;
-}
-
-.tagline {
-  margin: 66px 0 22px 0;
-  text-align: right;
-}
-
-.primary-nav {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-}
-
-/*==============================
- Navigation
- ===============================
- */
-
-.nav {
-  text-align: right;
-}
-
-/*==============================
-  Typography rule set
-  ==============================
- */
-
-h1,
-h3,
-h5,
-h4,
-p {
-  margin-bottom: 22px;
-}
-
-/*==============================
- Leads
- ===============================
- */
-.lead {
-  text-align: center;
-}
-
-.lead p {
-  font-size: 21px;
-  line-height: 33px;
-}
-
-/*==============================
- button rule set
+ Buttons
  ===============================
  */
 
@@ -440,23 +386,31 @@ p {
 }
 
 /*==============================
- Home rule set
+ Primary header
  ===============================
-*/
+ */
 
-.hero {
-  line-height: 44px;
-  padding: 22px 80px 66px 80px;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 36px;
-}
-
-.hero p {
-  font-size: 24px;
+.logo {
+  border-top: 4px solid #648880;
+  float: left;
+  font-size: 48px;
   font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 66px 0 22px 0;
+  text-align: right;
+}
+
+.primary-nav {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
 /*==============================
@@ -474,4 +428,67 @@ p {
 .primary-footer small {
   float: left;
   font-weight: 400;
+}
+
+/*==============================
+ Navigation
+ ===============================
+ */
+
+.nav {
+  text-align: right;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+
+
+/*==============================
+ Home
+ ===============================
+*/
+
+.hero {
+  color: #fff;
+  line-height: 44px;
+  padding: 22px 80px 66px 80px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+
+.hero p {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.teaser a:hover h3 {
+  color: #a9b2b9
+}
+
+
+/*==============================
+ Speakers
+ ===============================
+ */
+.speaker-info {
+  border: 1px solid #dfe2e5;
+  border-radius: 5px;
+  margin-top: 88px;
+  padding: 22px 0;
+  text-align: center;
+}
+
+.speaker {
+  margin-bottom: 44px;
 }
